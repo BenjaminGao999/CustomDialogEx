@@ -1,0 +1,18 @@
+1、BottomSheetDialog
+    ① material design 提供了bottomSheetDialog
+    在app的build.gradle添加依赖：
+     compile 'com.android.support:design:25.3.0'
+     使用很简单：
+     //BottomSheetDialog兼容到api level 16
+         private void showBottomSheetDialog() {
+             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+             bottomSheetDialog.setContentView(R.layout.layout_bottomsheetdialog);
+             bottomSheetDialog.show();
+         }
+
+     官方文档：
+     https://developer.android.google.cn/reference/android/support/design/widget/BottomSheetDialog.html#BottomSheetDialog(android.content.Context)
+
+     ② 自定义dialog实现bottomSheetDialog
+
+     
