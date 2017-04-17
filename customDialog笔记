@@ -3,16 +3,37 @@
     在app的build.gradle添加依赖：
      compile 'com.android.support:design:25.3.0'
      使用很简单：
-     //BottomSheetDialog兼容到api level 16
-         private void showBottomSheetDialog() {
-             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-             bottomSheetDialog.setContentView(R.layout.layout_bottomsheetdialog);
-             bottomSheetDialog.show();
-         }
+    //BottomSheetDialog兼容到api level 15
+        private void showBottomSheetDialog() {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+            bottomSheetDialog.setContentView(R.layout.layout_bottomsheetdialog);
+            bottomSheetDialog.show();
+        }
 
      官方文档：
      https://developer.android.google.cn/reference/android/support/design/widget/BottomSheetDialog.html#BottomSheetDialog(android.content.Context)
 
      ② 自定义dialog实现bottomSheetDialog
+       自定义Dialog要求具备的知识点：
+       Dialog
+       WindowManger
+       Window
 
-     
+       ③  Window和WindowManager的作用，以及Window和WindowManager的关系：
+           http://stackoverflow.com/questions/19846541/what-is-windowmanager-in-android
+              来看看精辟的回答：
+                啥是WindowManager?
+                 The Android WindowManager is a system service, which is responsible for managing the z-ordered list of windows,
+                    which windows are visible, and how they are laid out on screen. Among other things,
+                       it automatically performs window transitions and animations when opening or closing an app or rotating the screen.
+                 啥是Window?
+                 Every activity has a Window that is used to display its content on the screen. When you call setContentView on an activity,
+                 it attaches that view to the activity's default window. The default window fills the screen,
+                 so that your activity's window hides any other activities -- the WindowManager will display whichever window is on top.
+                 So normally you don't need to worry about windows - you just create an activity and Android will do the rest for you.
+
+                WindowManager和Window啥关系？
+                   Every Activity has a Window,WindowManager managers windows.
+
+
+
